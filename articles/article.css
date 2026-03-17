@@ -72,7 +72,7 @@
 
 .article-prose p {
   font-size: 0.97rem;
-  color: #b8b4ac;
+  color: var(--muted);
   line-height: 1.95;
   margin-bottom: 1.75rem;
 }
