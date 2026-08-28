@@ -3,201 +3,166 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Mehdi Baï | Founder building apps with purpose. Culture, people & the modern world.">
+  <meta name="description" content="Mehdi Baï. Lille. I studied law, then started building. WeWalk, Saqsi, WeGrow.">
   <title>Mehdi Baï</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="personallogo2.png">
   <link rel="apple-touch-icon" href="personallogo2.png">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=14">
 </head>
-<body>
+<body data-page="home">
 
+  <canvas id="field" class="field" aria-hidden="true"></canvas>
+  <canvas id="ink" class="ink" aria-hidden="true"></canvas>
   <div class="grain" aria-hidden="true"></div>
-
+  <div class="reading-bar" id="reading-bar" aria-hidden="true"></div>
   <div class="cursor-dot" id="cursor-dot"></div>
   <div class="cursor-ring" id="cursor-ring"></div>
 
-  <nav id="nav">
-    <a href="#" class="nav-logo">MB.</a>
-    <div class="nav-links">
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
-      <a href="#articles">Writing</a>
-      <a href="#links">Links</a>
+  <header class="site-header" id="nav">
+    <a href="index.html" class="wordmark">MB.</a>
+    <div class="header-end">
+      <nav>
+        <a href="#work" data-i18n="nav.work">Work</a>
+        <a href="#writing" data-i18n="nav.writing">Writing</a>
+        <a href="#links" data-i18n="nav.links">Links</a>
+      </nav>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+      </div>
     </div>
-  </nav>
+  </header>
 
   <section class="hero">
+    <figure class="hero-portrait">
+      <img src="mehdi.jpg" alt="Mehdi Baï" width="1200" height="1600" fetchpriority="high">
+    </figure>
     <div class="hero-content">
-      <span class="hero-eyebrow">Founder &amp; Builder</span>
+      <p class="place">Lille</p>
       <h1 class="hero-name" id="hero-name">Mehdi Baï</h1>
-      <p class="hero-desc">
-        Building apps with purpose.<br>
-        Culture, people &amp; the modern world.
-      </p>
-      <div class="hero-chips">
-        <span>25</span>
-        <span class="chip-dot">·</span>
-        <span>Lille, France</span>
-        <span class="chip-dot">·</span>
-        <span>Founder</span>
+      <div class="hero-copy">
+        <p data-i18n="hero.p1">I studied law. Then I started building.</p>
+        <p data-i18n="hero.p2">
+          Law taught me to read the rules that organize people.
+          Code is the same material, running.
+          What keeps me here: the city, being alone in it,
+          and what a phone can do besides scroll.
+        </p>
+        <p>
+          <a href="https://www.wewalkapp.co/fr">WeWalk</a><span data-i18n="hero.wewalk"> is for crossing paths in the street. </span>
+          <a href="https://www.saqsi.org">Saqsi</a><span data-i18n="hero.saqsi"> is for competing. </span>
+          <span data-i18n="hero.wegrow">Both come from WeGrow, the studio I started in Lille.</span>
+        </p>
       </div>
       <div class="hero-socials">
-        <a href="https://x.com/mehditant" target="_blank" rel="noopener" class="social-link">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          @mehditant
+        <a href="https://x.com/mehdiouzouu" target="_blank" rel="noopener" class="social-link" data-magnet>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          @mehdiouzouu
         </a>
-        <a href="https://github.com/Mehditant" target="_blank" rel="noopener" class="social-link">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-          Mehditant
+        <a href="https://github.com/Mehditant" target="_blank" rel="noopener" class="social-link" data-magnet>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/mehdibai/" target="_blank" rel="noopener" class="social-link" data-magnet>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
         </a>
       </div>
     </div>
     <div class="hero-scroll-hint">
-      <span>Scroll</span>
+      <span data-i18n="scroll">Scroll</span>
       <div class="scroll-line"></div>
     </div>
   </section>
 
-  <section class="section" id="about">
-    <div class="container">
-      <span class="section-tag">About</span>
-      <div class="section-body">
-        <p class="pull-quote reveal">I studied law,<br>then decided to build things instead.</p>
-        <p class="body-copy reveal">
-          I care about cities, loneliness, and what technology can do when it's designed with intention.
-          I build apps that try to make the modern world feel a little more human, tools for people
-          who want to connect, create, and belong.
-        </p>
-      </div>
-    </div>
-  </section>
+  <main>
 
-  <section class="section" id="work">
-    <div class="container">
-      <span class="section-tag">Work</span>
-      <div class="projects">
-
-        <div class="project reveal">
-          <div class="project-top">
-            <div class="project-info">
-              <h2 class="project-title"><a href="https://www.saqsi.org" target="_blank" rel="noopener">Saqsi</a></h2>
-              <p class="project-desc">
-                The quiz with endless questions. Thousands of prompts across ten themes, AI-generated so every round
-                feels fresh, plus challenges with friends and a global leaderboard.
-              </p>
-              <div class="project-tags">
-                <span>Mobile</span>
-                <span>Quiz</span>
-                <span>AI</span>
-              </div>
-            </div>
-            <span class="project-year">2026</span>
+    <section class="block" id="work">
+      <h2 class="block-title" data-i18n="work.title">Work</h2>
+      <ol class="work">
+        <li class="reveal">
+          <div class="work-head">
+            <span class="work-num" data-spin="01">01</span>
+            <h3><a href="https://www.wewalkapp.co/fr" target="_blank" rel="noopener">WeWalk</a></h3>
+            <span class="work-year">2025</span>
           </div>
-        </div>
-
-        <div class="project-rule"></div>
-
-        <div class="project reveal">
-          <div class="project-top">
-            <div class="project-info">
-              <h2 class="project-title"><a href="https://www.wewalkapp.co/fr" target="_blank" rel="noopener">WeWalk</a></h2>
-              <p class="project-desc">
-                A social urban app connecting city dwellers in large cities, fighting the twin epidemics
-                of loneliness and insecurity through shared local experiences.
-              </p>
-              <div class="project-tags">
-                <span>Mobile</span>
-                <span>Social</span>
-                <span>Urban</span>
-              </div>
-            </div>
-            <span class="project-year">2025</span>
+          <p data-i18n="work.wewalk">
+            An urban app. Company for a walk, what's happening nearby,
+            a ping if something starts close by. Loneliness and safety in the city aren't
+            a conference topic. They're the walk home.
+          </p>
+        </li>
+        <li class="reveal">
+          <div class="work-head">
+            <span class="work-num" data-spin="02">02</span>
+            <h3><a href="https://www.saqsi.org" target="_blank" rel="noopener">Saqsi</a></h3>
+            <span class="work-year">2026</span>
           </div>
-        </div>
-
-        <div class="project-rule"></div>
-
-        <div class="project reveal">
-          <div class="project-top">
-            <div class="project-info">
-              <h2 class="project-title">WeGrowLabs</h2>
-              <p class="project-desc">
-                An app studio building products that matter. Each release explores something I care about,
-                culture, social bonds, modernity, crafting digital experiences for a generation that craves depth.
-              </p>
-              <div class="project-tags">
-                <span>Studio</span>
-                <span>Culture</span>
-                <span>Social</span>
-              </div>
-            </div>
-            <span class="project-year">2025</span>
+          <p data-i18n="work.saqsi">
+            An iPhone quiz. Ten themes, challenges with friends, a leaderboard.
+            The questions don't stop. Every round should feel like the first.
+            That's what the AI is for. Not the slogan.
+          </p>
+        </li>
+        <li class="reveal">
+          <div class="work-head">
+            <span class="work-num" data-spin="03">03</span>
+            <h3>WeGrow</h3>
+            <span class="work-year">2025</span>
           </div>
-        </div>
+          <p data-i18n="work.wegrow">
+            The company. A studio in Lille, not a brand that promises
+            to change the world. The apps come from here.
+          </p>
+        </li>
+      </ol>
+    </section>
 
-      </div>
-    </div>
-  </section>
+    <section class="block" id="writing">
+      <h2 class="block-title" data-i18n="writing.title">Writing</h2>
+      <a href="articles/gen-z-social-media.html" class="note reveal">
+        <span class="note-date" data-i18n="writing.date">March 2026</span>
+        <span class="note-title" data-i18n="writing.headline">It’s not social. It’s television.</span>
+        <span class="note-dek" data-i18n="writing.dek">We still say "social network." We forgot what it meant.</span>
+      </a>
+    </section>
 
-  <section class="section" id="articles">
-    <div class="container">
-      <span class="section-tag">Writing</span>
-      <div class="articles-list">
+    <section class="block" id="links">
+      <h2 class="block-title" data-i18n="links.title">Links</h2>
+      <p class="links-lead reveal" data-i18n="links.lead">Tabs I never close.</p>
+      <ul class="links">
+        <li class="reveal">
+          <a href="https://www.worldmonitor.app/?lat=20.0000&amp;lon=0.0000&amp;zoom=1.00&amp;view=global&amp;timeRange=7d&amp;layers=conflicts%2Cbases%2Chotspots%2Cnuclear%2Csanctions%2Cweather%2Ceconomic%2Cwaterways%2Coutages%2Cmilitary%2Cnatural%2CiranAttacks" target="_blank" rel="noopener">
+            <span class="link-name">World Monitor</span>
+            <span class="link-why" data-i18n="links.world">The world as a system, not a feed.</span>
+          </a>
+        </li>
+        <li class="reveal">
+          <a href="https://anthonyhobday.com/sideprojects/saferules/" target="_blank" rel="noopener">
+            <span class="link-name">Visual design rules you can safely follow every time</span>
+            <span class="link-why" data-i18n="links.hobday">Anthony Hobday. Rules you can actually use.</span>
+          </a>
+        </li>
+        <li class="reveal">
+          <a href="https://www.techemails.com/" target="_blank" rel="noopener">
+            <span class="link-name">Internal Tech Emails</span>
+            <span class="link-why" data-i18n="links.emails">What companies say to each other when the door is closed.</span>
+          </a>
+        </li>
+      </ul>
+    </section>
 
-        <a href="articles/gen-z-social-media.html" class="article-item reveal">
-          <div class="article-meta">
-            <span class="article-date">Mar 2026</span>
-          </div>
-          <div class="article-body">
-            <h2 class="article-title">The Social Network is Dead. Long Live the Social Network.</h2>
-            <p class="article-excerpt">Gen Z is waking up to what the feed has done to us, and why it's time to rebuild social software from scratch.</p>
-          </div>
-          <span class="article-arrow">→</span>
-        </a>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="links">
-    <div class="container">
-      <span class="section-tag">Links</span>
-      <div class="links-intro">
-        <p>
-          Things I find interesting and worth revisiting: tools, essays, and projects that shape how I think
-          about the world and what I build.
-        </p>
-      </div>
-      <div class="links-list">
-        <a href="https://www.worldmonitor.app/?lat=20.0000&amp;lon=0.0000&amp;zoom=1.00&amp;view=global&amp;timeRange=7d&amp;layers=conflicts%2Cbases%2Chotspots%2Cnuclear%2Csanctions%2Cweather%2Ceconomic%2Cwaterways%2Coutages%2Cmilitary%2Cnatural%2CiranAttacks" target="_blank" rel="noopener" class="link-item">
-          <span class="link-label">World Monitor</span>
-          <span class="link-meta">Real-time global intelligence dashboard</span>
-        </a>
-        <a href="https://anthonyhobday.com/sideprojects/saferules/" target="_blank" rel="noopener" class="link-item">
-          <span class="link-label">Visual design rules you can safely follow every time</span>
-          <span class="link-meta">Anthony Hobday on practical visual design heuristics</span>
-        </a>
-        <a href="https://www.techemails.com/" target="_blank" rel="noopener" class="link-item">
-          <span class="link-label">Internal Tech Emails</span>
-          <span class="link-meta">Curated internal emails from the tech industry</span>
-        </a>
-      </div>
-    </div>
-  </section>
+  </main>
 
   <footer>
-    <div class="container footer-inner">
-      <span class="footer-copy">Mehdi Baï · 2026</span>
-      <div class="footer-links">
-        <a href="https://x.com/mehditant" target="_blank" rel="noopener">X</a>
-        <a href="https://github.com/Mehditant" target="_blank" rel="noopener">GitHub</a>
-      </div>
-    </div>
+    <span>Mehdi Baï, Lille</span>
+    <span>2026</span>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="i18n.js?v=4"></script>
+  <script src="script.js?v=8"></script>
 </body>
 </html>
